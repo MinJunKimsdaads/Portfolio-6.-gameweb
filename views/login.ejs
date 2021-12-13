@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href="../stylesheets/login.css">
+    <!-- <script src='../javascripts/login.js' defer></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+Display:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id='wrap'>
+        <h1 id='titlename'>PlayToo</h1>
+        <div id='menubox'>
+            <a href='./main' class="btn playgame">Play Game</a>
+            <a class="btn exit" id='btnexit'>Exit</a>
+        </div>
+    </div>
+
+    <script>
+        var exit=document.getElementById('btnexit');
+        console.log(exit);
+        exit.addEventListener('click',function(){
+            window.close();
+            self.close();
+            window.opener=window.location.href;self.close();
+            window.open('about:blank','_self').close();
+        })
+    </script>
+</body>
+</html>

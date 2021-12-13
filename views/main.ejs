@@ -5,8 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel='stylesheet' href="../stylesheets/main.css">
+    <!-- <script src='../javascripts/login.js' defer></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+Display:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>메인 이동완료</h1>
+<body id="wrapper" class="on">
+    <div id="screen">
+        <div id="content-holder">
+            <div id="content">
+                <div id="app">
+                    <div id="channel">AV1</div>
+                    <div id="text">No input signal.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="power" onclick="power();"></div>
+    
+    <script>
+    let power = function() {
+    let body = document.getElementById("wrapper");
+    body.className = (body.className == "on") ? "off" : "on";
+}
+    </script>
 </body>
 </html>

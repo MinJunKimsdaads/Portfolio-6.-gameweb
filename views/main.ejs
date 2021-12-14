@@ -7,9 +7,30 @@
     <title>Document</title>
     <link rel='stylesheet' href="../stylesheets/main.css">
     <!-- <script src='../javascripts/login.js' defer></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+Display:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script>
+        $(function(){
+            $('#menu #arrow i').on('click', function(){
+                var position1=$('#cdplayer').offset().left
+                if(position1<0){
+                    $('#cdplayer').css('animation-name','right');
+                } else {
+                    $('#cdplayer').css('animation-name','left');
+                }
+            })
+            $('#menu #arrow i').mouseover(function(){
+                    $('#menu').css('background-color','rgba(43,42,42)');
+                $('#menu #arrow i').mouseout(function(){
+                    $('#menu').css('background-color','rgba(43,42,42,0.5)');
+                })
+            })
+
+        })
+    </script>
 </head>
 <body id="wrapper" class="on">
     <div id="screen">
@@ -21,14 +42,30 @@
                 </div>
             </div>
         </div>
+        <div id='menu'>
+            <div id='arrow'>
+                <i class="fas fa-angle-double-right">
+                </i>
+            </div>
+        </div>
     </div>
-    <div id="power" onclick="power();"></div>
+
+    <div id='tvmenu'>
+        <div id='cd'>
+            <div id='rotate'>
+                <!-- <img src="../public/images/sample.png"> -->
+            </div>
+        </div>
+        <div id="power" onclick="power();"></div>
+    </div>
+    <div id='cdplayer'></div>
     
     <script>
     let power = function() {
     let body = document.getElementById("wrapper");
     body.className = (body.className == "on") ? "off" : "on";
-}
+    }
     </script>
 </body>
+
 </html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="../stylesheets/tetris.css">
+    <!-- <script src='../javascripts/login.js' defer></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+Display:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src='../javascripts/tetris.js'></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            $('#menu #arrow i').on('click', function(){
+                var position1=$('#cdplayer').offset().left
+                if(position1<0){
+                    $('#cdplayer').css('animation-name','right');
+                } else {
+                    $('#cdplayer').css('animation-name','left');
+                }
+            })
+            $('#menu #arrow i').mouseover(function(){
+                    $('#menu').css('background-color','rgba(43,42,42)');
+                $('#menu #arrow i').mouseout(function(){
+                    $('#menu').css('background-color','rgba(43,42,42,0.5)');
+                })
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <body id="wrapper" class="on">
+        <div id="screen">
+            <div class="wrapper-container">
+                <span class="tetris-container">
+                    <canvas id="stage" width="250px" height="500px" style="background-color:black;">
+                    </canvas>
+                    <span class="tetris-panel-container">
+                      <p>Next:</p>
+                        <canvas id="next" width="150px" height="150px" style="background-color:black;">
+                        </canvas>
+                      <p>LINES:<span id="lines">0</span></p>
+                      <p><span id="message"></span></p>
+                      <div class="tetris-panel-container-padding"></div>
+                      <table class="tetris-button-panel">
+                        <tr>
+                          <td></td>
+                          <td id="tetris-rotate-button" class="tetris-button">↻</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td id="tetris-move-left-button"class="tetris-button">←</td>
+                          <td id="tetris-fall-button"class="tetris-button">↓</td>
+                          <td id="tetris-move-right-button"class="tetris-button">→</td>
+                        </tr>
+                      </table>
+                    </span>
+                </span>
+            </div>
+            <div id='menu'>
+                <div id='arrow'>
+                    <i class="fas fa-angle-double-right">
+                    </i>
+                </div>
+            </div>
+        </div>
+    
+        <div id='tvmenu'>
+            <div id='cd'>
+                <div id='rotate'>
+                    
+                </div>
+            </div>
+            <div id="power" onclick="power();"></div>
+        </div>
+
+        <div id='cdplayer'>
+            <div id ='case'>
+                <div id='cd1'>
+                    <div id='img1'>
+    
+                    </div>
+                    <div id='description1'>
+                        <h2>게임1</h2>
+                        <p>설명1</p>
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div id='cd2'>
+                    <div id='img2'>
+    
+                    </div>
+                    <div id='description2'>
+                        <h2>게임2</h2>
+                        <p>설명2</p>
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div id='cd3'>
+                    <div id='img3'>
+    
+                    </div>
+                    <div id='description3'>
+                        <h2>게임3</h2>
+                        <p>설명3</p>
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div id='cd4'>
+                    <div id='img4'>
+    
+                    </div>
+                    <div id='description4'>
+                        <h2>게임4</h2>
+                        <p>설명4</p>
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div id='cd5'>
+                    <div id='img5'>
+    
+                    </div>
+                    <div id='description5'>
+                        <h2>게임5</h2>
+                        <p>설명5</p>
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div id='cd6'>
+                    <div id='img6'>
+    
+                    </div>
+                    <div id='description6'>
+                        <h2>게임6</h2>
+                        <p>설명6</p>
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div id='cd7'>
+                    <div id='img7'>
+    
+                    </div>
+                    <div id='description7'>
+                        <h2>게임7</h2>
+                        <p>설명7</p>
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div id='cd8'>
+                    <div id='img8'>
+    
+                    </div>
+                    <div id='description8'>
+                        <h2>게임8</h2>
+                        <p>설명8</p>
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+        let power = function() {
+        let body = document.getElementById("wrapper");
+        body.className = (body.className == "on") ? "off" : "on";
+        }
+        var tetris = new Tetris();
+        tetris.startGame();
+        </script>
+</body>
+</html>

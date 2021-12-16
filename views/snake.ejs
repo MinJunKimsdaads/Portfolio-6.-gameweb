@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="../stylesheets/snake.css">
     <link rel='stylesheet' href="../stylesheets/tetris.css">
     <!-- <script src='../javascripts/login.js' defer></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+Display:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+Display:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+Display:wght@600&family=Noto+Sans+KR&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <script src='../javascripts/tetris.js'></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src='../javascripts/snake.js'></script>
     <title>Document</title>
     <script>
         $(function(){
@@ -35,44 +44,25 @@
 </head>
     <body id="wrapper" class="on">
         <div id="screen">
-            <div class="wrapper-container">
-                <span class="tetris-container">
-                    <canvas id="stage" width="250px" height="500px" style="background-color:black;">
-                    </canvas>
-                    <span class="tetris-panel-container">
-                      <p>Next:</p>
-                        <canvas id="next" width="150px" height="150px" style="background-color:black;">
-                        </canvas>
-                      <p>LINES:<span id="lines">0</span></p>
-                      <p><span id="message"></span></p>
-                      <div class="tetris-panel-container-padding"></div>
-                      <table class="tetris-button-panel">
-                        <tr>
-                          <td></td>
-                          <td id="tetris-rotate-button" class="tetris-button">↻</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td id="tetris-move-left-button"class="tetris-button"><i class="fas fa-arrow-left"></i></td>
-                          <td id="tetris-fall-button"class="tetris-button"><i class="fas fa-arrow-down"></i></td>
-                          <td id="tetris-move-right-button"class="tetris-button"><i class="fas fa-arrow-right"></i></td>
-                        </tr>
-                      </table>
-                    </span>
-                </span>
+            <div class="container">
+                <header>
+                  <div class="contrast">10s</div>
+                  <div class="score">0</div>
+                </header>
+                <div class="grid"></div>
+                <footer>방향키 또는 스페이스바를 눌러 시작하세요
+                  <div>게임이 쉬우신가요? H를 눌러 난이도를 높이세요</footer>
             </div>
             <div id='menu'>
                 <div id='arrow'>
-                    <i class="fas fa-angle-double-right">
-                    </i>
+                    <i class="fas fa-angle-double-right"></i>
                 </div>
             </div>
         </div>
     
         <div id='tvmenu'>
             <div id='cd'>
-                <div id='rotate' style="background-image: url('/images/tetris1.png');">
-                    
+                <div id='rotate' style="background-image: url('/images/snake1.png');">
                 </div>
             </div>
             <div id="power" onclick="power();"></div>
@@ -162,14 +152,5 @@
                 </div>
             </div>
         </div>
-        
-        <script>
-        let power = function() {
-        let body = document.getElementById("wrapper");
-        body.className = (body.className == "on") ? "off" : "on";
-        }
-        var tetris = new Tetris();
-        tetris.startGame();
-        </script>
 </body>
 </html>

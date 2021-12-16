@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var mysqlRouter = require('./routes/mysql');
 var mainRouter = require('./routes/main');
 var tetrisRouter = require('./routes/tetris');
+var snakeRouter = require('./routes/snake');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/users', usersRouter);
 app.use('/mysql', mysqlRouter);
 app.use('/main', mainRouter);
 app.use('/tetris', tetrisRouter);
+app.use('/snake', snakeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

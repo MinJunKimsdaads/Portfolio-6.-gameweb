@@ -148,20 +148,38 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50% 50%;
-    background-color: #999999;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
     position: relative;
+    animation: rotate 3s linear infinite;
 }
+
+@keyframes rotate {
+    100% {
+        transform: rotateZ(360deg)
+    }
+}
+
 
 #cd #rotate::before {
     content: '';
     width: 30%;
     height: 30%;
     border-radius: 50% 50%;
-    background-color: #cccccc;
+    background-color: white;
     position: absolute;
     top: 35%;
     left: 35%;
     z-index: 50;
+}
+
+#random {
+    /* bottom: 100px; */
+    width: 100px;
+    height: 30px;
+    background-color: #282828;
+    cursor: pointer;
 }
 
 #power {
@@ -175,6 +193,12 @@ body {
     background-color: #0035ff;
     box-shadow: 0px 0px 20px 2px #0035ff;
 }
+
+.on #random {
+    background-color: #8B0000;
+    box-shadow: 0px 0px 20px 2px #8B0000;
+}
+
 #channel {
     position: absolute;
     top: 120px;
@@ -194,164 +218,5 @@ body {
     animation: shiver 1s linear .5s infinite;
 }
 
-#menu {
-    width: 50px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(43,42,42,0.5);
-    display: flex;
-    align-items: center;
-    z-index: 100;
-}
 
-#menu #arrow {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: gray; */
-}
-
-#menu #arrow:hover {
-    cursor: pointer;
-}
-
-#menu #arrow i {
-    font-size: 40px;
-}
-
-#cdplayer {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left:-100%;
-    background-color: rgba(0,0,0,0.7);
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    z-index: 70;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@keyframes right {
-    to {
-        left: 0;
-    }
-}
-
-@keyframes left {
-    to {
-        left: -100%;
-    }
-}
-
-#case {
-    width: 70%;
-    height: 70%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    /* background-color: pink; */
-}
-
-#case > div {
-    width: 22%;
-    height: 44%;
-    border-radius: 10% 10%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    background-color: rgba(68,68,68,0.7);
-}
-
-#case div div:first-child {
-    width: 80%;
-    height: 45%;
-    border-radius: 0% 0%;
-    /* background-color: pink; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#case div div:first-child img {
-    width: 80%;
-    height: 100%;
-}
-
-#case div div:last-child {
-    width: 90%;
-    height: 40%;
-    border-radius: 0% 0%;
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
-    /* background-color: red; */
-}
-
-#case div div:last-child h2 {
-    width: 100%;
-    height: 30%;
-    margin: 0;
-    padding: 0;
-    color: white;
-    /* background-color: yellow; */
-    display: flex;
-    justify-content:flex-start;
-    align-items: flex-end;
-    font-family: 'Anton', sans-serif;
-    font-family: 'Noto Sans Display', sans-serif;
-    font-family: 'Noto Sans KR', sans-serif;
-}
-
-#case div div:last-child p {
-    margin: 0;
-    padding: 0;
-    width: 40%;
-    height: 35%;
-    font-size: 15px;
-    color: #a3a3a3;
-    /* background-color: yellow; */
-    font-family: 'Anton', sans-serif;
-    font-family: 'Noto Sans Display', sans-serif;
-    font-family: 'Noto Sans KR', sans-serif;
-}
-
-#case div div:last-child i {
-    font-size: 50px;
-    background: linear-gradient(to top, #DA4453, #89216B);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#case div div:last-child i:hover {
-    cursor: pointer;
-    animation-name: changecolor;
-    animation-duration: 0.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-@keyframes changecolor {
-    from {
-        background: linear-gradient(to top, #DA4453, #89216B);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    to {
-        background: linear-gradient(to top, #FC5C7D, #6A82FB);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-}
 

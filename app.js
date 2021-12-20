@@ -10,6 +10,12 @@ var mysqlRouter = require('./routes/mysql');
 var mainRouter = require('./routes/main');
 var tetrisRouter = require('./routes/tetris');
 var snakeRouter = require('./routes/snake');
+var pingpongRouter = require('./routes/pingpong')
+var chessRouter = require('./routes/chess')
+var memoryRouter = require('./routes/memory')
+var copycatRouter = require('./routes/copycat')
+var sudokuRouter = require('./routes/sudoku')
+var blockRouter = require('./routes/block')
 
 var app = express();
 
@@ -30,7 +36,12 @@ app.use('/mysql', mysqlRouter);
 app.use('/main', mainRouter);
 app.use('/tetris', tetrisRouter);
 app.use('/snake', snakeRouter);
-
+app.use('/pingpong', pingpongRouter);
+app.use('/chess', chessRouter);
+app.use('/memory', memoryRouter);
+app.use('/copycat', copycatRouter);
+app.use('/sudoku', sudokuRouter);
+app.use('/block', blockRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

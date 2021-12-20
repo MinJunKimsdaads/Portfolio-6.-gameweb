@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href="../stylesheets/snake.css">
-    <link rel='stylesheet' href="../stylesheets/tetris.css">
+    <link rel='stylesheet' href="../stylesheets/gamescreen.css">
+    <link rel='stylesheet' href="../stylesheets/tvmenu.css">
+    <link rel='stylesheet' href="../stylesheets/menu.css">
     <!-- <script src='../javascripts/login.js' defer></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,85 +74,91 @@
             <div id ='case'>
                 <div id='cd1'>
                     <div id='img1'>
-    
+                        <img src='../images/tetris.png'>
                     </div>
                     <div id='description1'>
-                        <h2>게임1</h2>
-                        <p>설명1</p>
-                        <i class="fas fa-play-circle"></i>
+                        <h2>테트리스</h2>
+                        <p>블록을 한 줄씩 쌓아보세요!</p>
+                        <a href='/tetris'><i class="fas fa-play-circle"></i></a>
                     </div>
                 </div>
                 <div id='cd2'>
                     <div id='img2'>
-    
+                        <img src='../images/snake.png'>
                     </div>
                     <div id='description2'>
-                        <h2>게임2</h2>
-                        <p>설명2</p>
-                        <i class="fas fa-play-circle"></i>
+                        <h2>뱀게임</h2>
+                        <p>제한시간<br> 10초입니다!</p>
+                        <a href='/snake'><i class="fas fa-play-circle"></i></a>
                     </div>
                 </div>
                 <div id='cd3'>
                     <div id='img3'>
-    
+                        <img src='../images/pinpong.png'>
                     </div>
                     <div id='description3'>
-                        <h2>게임3</h2>
-                        <p>설명3</p>
-                        <i class="fas fa-play-circle"></i>
+                        <h2>핑퐁</h2>
+                        <p>AI와 탁구를 즐겨보세요!</p>
+                        <a href='/pingpong'><i class="fas fa-play-circle"></i></a>
                     </div>
                 </div>
                 <div id='cd4'>
                     <div id='img4'>
-    
+                        <img src='../images/chess.png'>
                     </div>
                     <div id='description4'>
-                        <h2>게임4</h2>
-                        <p>설명4</p>
-                        <i class="fas fa-play-circle"></i>
+                        <h2>체스</h2>
+                        <p>친구와 체스를 즐겨보세요!</p>
+                        <a href='/chess'><i class="fas fa-play-circle"></i></a>
                     </div>
                 </div>
                 <div id='cd5'>
                     <div id='img5'>
-    
+                        <img src='../images/memorygame.png'>
                     </div>
                     <div id='description5'>
-                        <h2>게임5</h2>
-                        <p>설명5</p>
-                        <i class="fas fa-play-circle"></i>
+                        <h2>메모리게임</h2>
+                        <p>기억력을 발휘해보세요!</p>
+                        <a href='/memory'><i class="fas fa-play-circle"></i></a>
                     </div>
                 </div>
                 <div id='cd6'>
                     <div id='img6'>
-    
+                        <img src='../images/copycat.png'>
                     </div>
                     <div id='description6'>
-                        <h2>게임6</h2>
-                        <p>설명6</p>
-                        <i class="fas fa-play-circle"></i>
+                        <h2>카피캣</h2>
+                        <p>고양이를 동시에 넣으셔야되요!</p>
+                        <a href='/copycat'><i class="fas fa-play-circle"></i></a>
                     </div>
                 </div>
                 <div id='cd7'>
                     <div id='img7'>
-    
+                        <img src='../images/sudoku.png'>
                     </div>
                     <div id='description7'>
-                        <h2>게임7</h2>
-                        <p>설명7</p>
-                        <i class="fas fa-play-circle"></i>
+                        <h2>스도쿠</h2>
+                        <p>시간안에 빈칸에 숫자를 채우세요!</p>
+                        <a href='/sudoku'><i class="fas fa-play-circle"></i></a>
                     </div>
                 </div>
                 <div id='cd8'>
                     <div id='img8'>
-    
+                        <img src='../images/maze.png'>
                     </div>
                     <div id='description8'>
-                        <h2>게임8</h2>
-                        <p>설명8</p>
-                        <i class="fas fa-play-circle"></i>
+                        <h2>미로찾기</h2>
+                        <p>조이스틱을 이용해서 공을 홀안에 넣으세요!</p>
+                        <a href='/block'><i class="fas fa-play-circle"></i></a>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            let power = function() {
+            window.location.href='/main';
+            body.className = (body.className == "on") ? "off" : "on";
+            }
+        </script>
 </body>
 </html>

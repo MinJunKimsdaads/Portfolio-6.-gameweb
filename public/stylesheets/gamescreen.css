@@ -1,0 +1,31 @@
+body, #screen {
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+body {
+    margin: 0;
+    background-color: #000;
+    font-family: "Source Code Pro", monospace;
+    overflow: hidden;
+}
+
+#screen {
+    margin: 150px;
+    height: calc(100vh - 300px);
+    width: calc(100vw - 300px);
+    background: black;
+    color: #fff;
+    text-shadow: 2px 0 rgba(255, 0, 0, 0.9), -2px 0 rgba(0, 0, 255, 0.9);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html {
+    touch-action: manipulation;
+}

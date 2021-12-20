@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href="../stylesheets/tetris.css">
+    <link rel='stylesheet' href="../stylesheets/pingpong.css">
     <link rel='stylesheet' href="../stylesheets/tvmenu.css">
     <link rel='stylesheet' href="../stylesheets/menu.css">
     <link rel='stylesheet' href="../stylesheets/gamescreen.css">
@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+Display:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <script src='../javascripts/tetris.js'></script>
+    <script src='../javascripts/pingpong.js'></script>
     <title>Document</title>
     <script>
         $(function(){
@@ -37,32 +37,7 @@
 </head>
     <body id="wrapper" class="on">
         <div id="screen">
-            <div class="wrapper-container">
-                <span class="tetris-container">
-                    <canvas id="stage" width="250px" height="500px" style="background-color:black;">
-                    </canvas>
-                    <span class="tetris-panel-container">
-                      <p>Next:</p>
-                        <canvas id="next" width="150px" height="150px" style="background-color:black;">
-                        </canvas>
-                      <p>LINES:<span id="lines">0</span></p>
-                      <p><span id="message"></span></p>
-                      <div class="tetris-panel-container-padding"></div>
-                      <table class="tetris-button-panel">
-                        <tr>
-                          <td></td>
-                          <td id="tetris-rotate-button" class="tetris-button"><i class="fas fa-sync-alt"></i></td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td id="tetris-move-left-button"class="tetris-button"><i class="fas fa-arrow-left"></i></td>
-                          <td id="tetris-fall-button"class="tetris-button"><i class="fas fa-arrow-down"></i></td>
-                          <td id="tetris-move-right-button"class="tetris-button"><i class="fas fa-arrow-right"></i></td>
-                        </tr>
-                      </table>
-                    </span>
-                </span>
-            </div>
+            <canvas width="400" height="400"></canvas>
             <div id='menu'>
                 <div id='arrow'>
                     <i class="fas fa-angle-double-right">
@@ -73,11 +48,11 @@
     
         <div id='tvmenu'>
             <div id='cd'>
-                <div id='rotate' style="background-image: url('/images/tetris1.png');">
+                <div id='rotate' style="background-image: url('/images/pinpong1.png');">
                     
                 </div>
             </div>
-            <div id="power" onclick="power();"></div>
+            <div id="power" onclick="power();"><a href="/main"></a></div>
         </div>
 
         <div id='cdplayer'>
@@ -170,8 +145,6 @@
         window.location.href='/main';
         body.className = (body.className == "on") ? "off" : "on";
         }
-        var tetris = new Tetris();
-        tetris.startGame();
         </script>
 </body>
 </html>
